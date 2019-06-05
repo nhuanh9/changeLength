@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <input type="text" id="inputLeng">
+    <input type="button" id="btnMet" onclick="convert(this.id)" value="Chuyển từ met sang feet">
+    <input type="button" id="btnFeet" onclick="convert(this.id)" value="Chuyển từ feet sang met">
+    <div id="result"></div>
+</form>
+<script>
+
+    function convert(btnId) {
+        let leng = 0;
+        leng = parseInt(document.getElementById('inputLeng').value);
+        if (leng < (0)) {
+            document.getElementById('result').innerText = 'input cannot be less than zero';
+        } else {
+            if (btnId == "btnFeet") {
+                document.getElementById('result').innerText = '' + (leng * 0.3048);
+            } else {
+                document.getElementById('result').innerText = '' + (leng / 0.3048);
+            }
+        }
+    }
+</script>
+</body>
+</html>
